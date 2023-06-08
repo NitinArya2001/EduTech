@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Signup Page</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+      *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #e6dc72;
+}
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        #1845ad,
+        #23a2f6
+    );
+    left: -80px;
+    top: -80px;
+}
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        #ff512f,
+        #f09819
+    );
+    right: -30px;
+    bottom: -80px;
+}
+form{
+    height: 650px;
+    width: 450px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #2d0b0b;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 40px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 2px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #1c0808;
+}
+button{
+    margin-top: 14px;
+    width: 100%;
+    background-color: #a2a029;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.social{
+  margin-top: 30px;
+  display: flex;
+}
+.social div{
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255,255,255,0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover{
+  background-color: rgba(255,255,255,0.47);
+}
+.social .fb{
+  margin-left: 25px;
+}
+.social i{
+  margin-right: 4px;
+}
+.user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.user label {
+    margin-right: 10px;
+}
+
+.user div {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form action="" method="post">
+        {% csrf_token %} 
+        <h3>Signup Here</h3>
+        
+        <label for="username">Username</label>
+        {{form.username}}
+        <label for="email">Email</label>
+        {{form.email}}
+
+        <label for="password1">Password</label>
+        {{form.password1}}
+
+        <label for="password2">Confirm Password</label>
+        {{form.password2}}
+
+        <div class="category">
+            <label for="category"></label>
+            <div style="display: flex; align-items: center;">
+                 <!-- <div style="display: flex; align-items: center; margin-right: 10px;">
+  <input type="radio" id="html" name="fav_language" value="Teacher">
+  <label for="html">Teacher</label><br>
+  <input type="radio" id="css" name="fav_language" value="Student">
+  <label for="css">Student</label><br> -->
+
+                </div>
+                {{form.category}}
+            </div>
+        </div>
+
+        <button type="submit">Signup</button>
+        {{form.errors}}
+        <h4 style="color:black">already have an account? <a href="{% url 'login' %}" style="text-decoration:none;color:blue">login</a></h4>
+    </form>
+
+    <script>
+        var form_fields = document.getElementsByTagName('input')
+        form_fields[1].placeholder = 'Username';
+        form_fields[2].placeholder = 'Email';
+        form_fields[3].placeholder = 'Enter password';
+        form_fields[4].placeholder = 'Re-enter password';
+    </script>
+</body>
+</html>
+
