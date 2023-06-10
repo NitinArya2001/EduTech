@@ -17,13 +17,14 @@ def student_profile(request):
 
 @login_required
 def student_profile_update(request):
-    print("Inside student_profile_update view")
-    form = StudentProfileForm(instance=request.user)
     if request.method == 'POST':
-        form = StudentProfileForm(request.POST, instance=request.user)
+        form = StudentProfileForm(request.POST, instance=request.user.student_profile)
         if form.is_valid():
             form.save()
-            return redirect('/student_profile')
 
-    context = {'form': form}
-    return render(request, 'student_profile_form.html', context)
+            # Redirect to the profile details page
+            return redirect('/student_profile')
+    else:
+        form = StudentProfileForm()
+
+    return render(request, 'student_profile_form.html', {'form': form})

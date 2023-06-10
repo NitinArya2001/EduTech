@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Support</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card-deck {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .card {
+            flex: 0 0 400px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            border-radius: 0.25rem;
+        }
+        .card-title {
+            margin-bottom: 0;
+            background-color: rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        }
+        .card-header {
+            padding: 0.75rem 1.25rem;
+            margin-bottom: 0;
+            background-color: rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+        }
+        .card-body {
+            margin: 0 1.3rem; /* Add margin to the left and right of the card body */
+        }
+        footer {
+            width: 100%;
+            padding: 1rem;
+            text-align: center;
+            background-color: #f8f9fa;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
+
+
+
+</head>
+<body class="bg-light d-flex flex-column d-lg-block">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <section class="container" style="margin-top: 10em; margin-bottom: 10em">
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-title"><h3 class="card-header">Corporate office</h3></div>
+                <div class="card-body">
+                    <p>
+                        Shop No: 2, 12-6-2/273/2<br>
+                        V C Plaza<br>
+                        Opposite BJP Office<br>
+                        Sanganer<br>
+                        Jaipur - 302029<br>
+                        Rajasthan, India<br><br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-title"><h3 class="card-header">Technical Support</h3></div>
+                <div class="card-body">
+                    <dl>
+                        <dd>For help &amp; any
+                            kind of support email us here: <a href="mailto:support@gmail.com" title="Support email">support@gmail.com</a>
+                        </dd>
+                        <dt>Phone</dt>
+                        <dd><a href="tel:+917995417777">+91 799 541 7777</a></dd>
+                        <dd><a href="tel:+916305007479">+91 630 500 7479</a></dd>
+                        <dd><a href="tel:+916305008997">+91 630 500 8997</a></dd>
+                        <dt>Everyday</dt>
+                        <dd>8:00 AM - 7:00 PM (IST)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

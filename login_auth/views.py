@@ -67,3 +67,6 @@ def loginPage(request):
 def logoutPage(request):
     logout(request)
     return redirect('/login')
+
+def support(request):
+    return render(request, 'support.html')
